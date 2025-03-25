@@ -7,24 +7,24 @@ import { useState } from 'react'
 const Wheel = dynamic(() => import('react-custom-roulette').then(mod => mod.Wheel), { ssr: false });
 
 const data = [
-  { option: 'Gorra Roja', style: { backgroundColor: '#D5D6D2', textColor: 'black' }  },
-  { option: 'Gorra Negra', style: { backgroundColor: '#FF585F', textColor: 'black' } },
-  { option: 'Cooler', style: { backgroundColor: '#2DC901', textColor: 'black' } },
-  { option: 'Franela', style: { backgroundColor: '#D5D6D2', textColor: 'black' } },
-  { option: 'Gorra Roja', style: { backgroundColor: '#FF585F', textColor: 'black' } },
-  { option: 'Gorra Negra', style: { backgroundColor: '#2DC901', textColor: 'black' } },
-  { option: 'Cooler', style: { backgroundColor: '#D5D6D2', textColor: 'black' } },
-  { option: 'Franela', style: { backgroundColor: '#FF585F', textColor: 'black' } },
-  { option: 'Gorra Roja', style: { backgroundColor: '#2DC901', textColor: 'black' } },
-  { option: 'Gorra Negra', style: { backgroundColor: '#D5D6D2', textColor: 'black' } },
-  { option: 'Cooler', style: { backgroundColor: '#FF585F', textColor: 'black' } },
-  { option: 'Franela', style: { backgroundColor: '#2DC901', textColor: 'black' } },
-  { option: 'Gorra Roja', style: { backgroundColor: '#D5D6D2', textColor: 'black' } },
-  { option: 'Gorra Negra', style: { backgroundColor: '#FF585F', textColor: 'black' } },
-  { option: 'Franela', style: { backgroundColor: '#2DC901', textColor: 'black' } },
-  { option: 'Cooler', style: { backgroundColor: '#D5D6D2', textColor: 'black' } },
-  { option: 'Gorra Roja', style: { backgroundColor: '#FF585F', textColor: 'black' } },
-  { option: 'Gorra Negra', style: { backgroundColor: '#2DC901', textColor: 'black' } },
+  { option: 'Gorra Roja', style: { backgroundColor: '#d5d6d2', textColor: 'black' }  },
+  { option: 'Gorra Negra', style: { backgroundColor: '#ff5860', textColor: 'black' } },
+  { option: 'Cooler', style: { backgroundColor: '#2dc9d1', textColor: 'black' } },
+  { option: 'Franela', style: { backgroundColor: '#d5d6d2', textColor: 'black' } },
+  { option: 'Gorra Roja', style: { backgroundColor: '#ff5860', textColor: 'black' } },
+  { option: 'Gorra Negra', style: { backgroundColor: '#2dc9d1', textColor: 'black' } },
+  { option: 'Cooler', style: { backgroundColor: '#d5d6d2', textColor: 'black' } },
+  { option: 'Franela', style: { backgroundColor: '#ff5860', textColor: 'black' } },
+  { option: 'Gorra Roja', style: { backgroundColor: '#2dc9d1', textColor: 'black' } },
+  { option: 'Gorra Negra', style: { backgroundColor: '#d5d6d2', textColor: 'black' } },
+  { option: 'Cooler', style: { backgroundColor: '#ff5860', textColor: 'black' } },
+  { option: 'Franela', style: { backgroundColor: '#2dc9d1', textColor: 'black' } },
+  { option: 'Gorra Roja', style: { backgroundColor: '#d5d6d2', textColor: 'black' } },
+  { option: 'Gorra Negra', style: { backgroundColor: '#ff5860', textColor: 'black' } },
+  { option: 'Franela', style: { backgroundColor: '#2dc9d1', textColor: 'black' } },
+  { option: 'Cooler', style: { backgroundColor: '#d5d6d2', textColor: 'black' } },
+  { option: 'Gorra Roja', style: { backgroundColor: '#ff5860', textColor: 'black' } },
+  { option: 'Gorra Negra', style: { backgroundColor: '#2dc9d1', textColor: 'black' } },
 ]
 
 export default function WheelComponent() {
@@ -40,7 +40,8 @@ export default function WheelComponent() {
   }
 
   return (
-    <>
+    <div className='flex mx-auto space-x-10'>
+      <button className='' onClick={handleSpinClick}>GIRAR</button>
       <Wheel
         mustStartSpinning={mustSpin}
         prizeNumber={prizeNumber}
@@ -49,9 +50,8 @@ export default function WheelComponent() {
         textColors={['#ffffff']}
         onStopSpinning={() => {
           setMustSpin(false);
-        }}
+        }}        
       />
-      <button onClick={handleSpinClick} style={{margin: 'auto'}}>GIRAR</button>
-    </>
+    </div>
   )
 }

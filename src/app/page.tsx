@@ -3,14 +3,18 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image src="/images/logo_PYME_Movilnet.jpg" alt="Logo PYME Movilnet" width={200} height={100}/>
-        <WheelComponent/>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
+    
+      <div className="grid grid-cols-1 justify-items-center p-8">
+        <div className="flex space-x-10 items-center mx-auto">
+          <Image className="rounded-2xl" src="/images/logo_PYME_Movilnet.jpg" alt="Logo PYME Movilnet" width={200} height={100}/>
+          <h1 className="text-3xl">Ruleta de la Suerte Movilnet</h1>
+        </div>
+        <div className="block">
+          <WheelComponent/>
+        </div>
         
-      </footer>
-    </div>
+      </div>
+
+
   );
 }
