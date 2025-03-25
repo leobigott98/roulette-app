@@ -6,6 +6,10 @@ import { useState } from 'react'
 // Dynamically import react-custom-roulette with SSR disabled
 const Wheel = dynamic(() => import('react-custom-roulette').then(mod => mod.Wheel), { ssr: false });
 
+type Props = {
+  setPrizeText: (arg0:string)=>void
+}
+
 const data = [
   { option: 'Gorra Roja', style: { backgroundColor: '#d5d6d2', textColor: 'black' }  },
   { option: 'Gorra Negra', style: { backgroundColor: '#ff5860', textColor: 'black' } },
@@ -27,9 +31,9 @@ const data = [
   { option: 'Gorra Negra', style: { backgroundColor: '#2dc9d1', textColor: 'black' } },
 ]
 
-export default function WheelComponent() {
+export default function WheelComponent({setPrizeText}: Props) {
   const [mustSpin, setMustSpin] = useState(false);
-  const [prizeNumber, setPrizeNumber] = useState(0);
+  const [prizeNumber, setPrizeNumber] = useState(0)
 
   const handleSpinClick = () => {
     if (!mustSpin) {
@@ -37,11 +41,11 @@ export default function WheelComponent() {
       setPrizeNumber(newPrizeNumber);
       setMustSpin(true);
     }
+
   }
 
   return (
-    <div className='flex mx-auto space-x-10'>
-      <button className='' onClick={handleSpinClick}>GIRAR</button>
+    <div className='md:flex grid grid-cols-1 justify-items-center mx-auto space-x-10'>
       <Wheel
         mustStartSpinning={mustSpin}
         prizeNumber={prizeNumber}
@@ -50,8 +54,10 @@ export default function WheelComponent() {
         textColors={['#ffffff']}
         onStopSpinning={() => {
           setMustSpin(false);
+          setPrizeText(data[prizeNumber].option)
         }}        
       />
+      <button className='rounded-2xl mx-auto bg-blue-200 p-4 my-auto hover:bg-blue-300' onClick={handleSpinClick}>GIRAR</button>
     </div>
   )
 }
