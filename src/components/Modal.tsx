@@ -33,11 +33,11 @@ export default function Example({prize, open, setOpen}: Props) {
                 </div>
                 <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                   <DialogTitle as="h3" className="text-base font-semibold text-gray-900">
-                    ¡Has ganado!
+                    {prize == 'Gracias por Participar'? `¡${prize}!` : '¡Has ganado!'}
                   </DialogTitle>
                   <div className="mt-2">
                     <p className="text-sm text-gray-500">
-                      ¡Tu premio es {prize}!
+                    {prize == 'Gracias por Participar'? '' : `¡Tu premio es ${prize}!`}  
                     </p>
                   </div>
                 </div>
@@ -47,7 +47,7 @@ export default function Example({prize, open, setOpen}: Props) {
               <button
                 type="button"
                 onClick={() => setOpen(false)}
-                className="inline-flex w-full justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-green-500 sm:ml-3 sm:w-auto"
+                className="inline-flex w-full justify-center rounded-md bg-[#2dc9d1] px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-[#21949a] sm:ml-3 sm:w-auto"
               >
                 Aceptar
               </button>

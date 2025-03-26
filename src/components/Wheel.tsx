@@ -12,24 +12,26 @@ type Props = {
 }
 
 const data = [
+  { option: 'Gorra Roja', style: { backgroundColor: '#d5d6d2', textColor: 'black', } },
+  { option: 'Gorra Negra', style: { backgroundColor: '#ff5860', textColor: 'black' } },
+  { option: 'Cooler', style: { backgroundColor: '#2dc9d1', textColor: 'black' } },
+  { option: 'Franela', style: { backgroundColor: '#d5d6d2', textColor: 'black' } },
+  { option: 'Gracias por Participar', style: { backgroundColor: '#ff5860', textColor: 'black' } },
+  { option: 'Intenta 1 vez más', style: { backgroundColor: '#2dc9d1', textColor: 'black' } },
+  { option: 'Gorra Roja', style: { backgroundColor: '#d5d6d2', textColor: 'black' }  },
+  { option: 'Gorra Negra', style: { backgroundColor: '#ff5860', textColor: 'black' } },
+  { option: 'Cooler', style: { backgroundColor: '#2dc9d1', textColor: 'black' } },
+  { option: 'Intenta 1 vez más', style: { backgroundColor: '#d5d6d2', textColor: 'black' } },
+  { option: 'Gorra Roja', style: { backgroundColor: '#ff5860', textColor: 'black' }  },
+  { option: 'Gorra Negra', style: { backgroundColor: '#2dc9d1', textColor: 'black' } },
+  { option: 'Cooler', style: { backgroundColor: '#d5d6d2', textColor: 'black' } },
+  { option: 'Gracias por Participar', style: { backgroundColor: '#ff5860', textColor: 'black' } },
+  { option: 'Intenta 1 vez más', style: { backgroundColor: '#2dc9d1', textColor: 'black' } },
   { option: 'Gorra Roja', style: { backgroundColor: '#d5d6d2', textColor: 'black' }  },
   { option: 'Gorra Negra', style: { backgroundColor: '#ff5860', textColor: 'black' } },
   { option: 'Cooler', style: { backgroundColor: '#2dc9d1', textColor: 'black' } },
   { option: 'Franela', style: { backgroundColor: '#d5d6d2', textColor: 'black' } },
-  { option: 'Gorra Roja', style: { backgroundColor: '#ff5860', textColor: 'black' } },
-  { option: 'Gorra Negra', style: { backgroundColor: '#2dc9d1', textColor: 'black' } },
-  { option: 'Cooler', style: { backgroundColor: '#d5d6d2', textColor: 'black' } },
-  { option: 'Franela', style: { backgroundColor: '#ff5860', textColor: 'black' } },
-  { option: 'Gorra Roja', style: { backgroundColor: '#2dc9d1', textColor: 'black' } },
-  { option: 'Gorra Negra', style: { backgroundColor: '#d5d6d2', textColor: 'black' } },
-  { option: 'Cooler', style: { backgroundColor: '#ff5860', textColor: 'black' } },
-  { option: 'Franela', style: { backgroundColor: '#2dc9d1', textColor: 'black' } },
-  { option: 'Gorra Roja', style: { backgroundColor: '#d5d6d2', textColor: 'black' } },
-  { option: 'Gorra Negra', style: { backgroundColor: '#ff5860', textColor: 'black' } },
-  { option: 'Franela', style: { backgroundColor: '#2dc9d1', textColor: 'black' } },
-  { option: 'Cooler', style: { backgroundColor: '#d5d6d2', textColor: 'black' } },
-  { option: 'Gorra Roja', style: { backgroundColor: '#ff5860', textColor: 'black' } },
-  { option: 'Gorra Negra', style: { backgroundColor: '#2dc9d1', textColor: 'black' } },
+  { option: 'Gracias por Participar', style: { backgroundColor: '#ff5860', textColor: 'black' } },
 ]
 
 export default function WheelComponent({setPrizeText, setWinner}: Props) {
@@ -64,11 +66,17 @@ export default function WheelComponent({setPrizeText, setWinner}: Props) {
             setPrizeText(data[prizeNumber].option)
             setWinner(true)
             setClickable(true)
-          }}        
+          }} 
+          
+          innerBorderWidth={0}      
+          innerRadius={10} 
+          outerBorderWidth={0}
+          radiusLineWidth={0}
+          fontSize={15}
         />
       </div>
       
-      <button className={clickable? 'rounded-2xl mx-auto  p-4 my-auto  mt-2 bg-blue-300 hover:bg-blue-400' : 'rounded-2xl mx-auto  p-4 my-auto  mt-2 bg-gray-300 text-gray-500'} onClick={handleSpinClick} disabled={!clickable}>GIRAR</button>
+      <button className={clickable? 'rounded-2xl mx-auto  p-4 my-auto  mt-2 bg-[#2dc9d1] hover:bg-[#21949a]' : 'rounded-2xl mx-auto  p-4 my-auto  mt-2 bg-gray-300 text-gray-500'} onClick={handleSpinClick} disabled={!clickable}>GIRAR</button>
     </div>
   )
 }
