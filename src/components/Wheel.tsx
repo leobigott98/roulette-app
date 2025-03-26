@@ -52,19 +52,22 @@ export default function WheelComponent({setPrizeText, setWinner}: Props) {
 
   return (
     <div className='grid grid-cols-1 justify-items-center mx-auto space-x-10'>
-      <Wheel
-        mustStartSpinning={mustSpin}
-        prizeNumber={prizeNumber}
-        data={data}
-        backgroundColors={['#3e3e3e', '#df3428']}
-        textColors={['#ffffff']}
-        onStopSpinning={() => {
-          setMustSpin(false);
-          setPrizeText(data[prizeNumber].option)
-          setWinner(true)
-          setClickable(true)
-        }}        
-      />
+      <div className='mx-auto'>
+        <Wheel
+          mustStartSpinning={mustSpin}
+          prizeNumber={prizeNumber}
+          data={data}
+          backgroundColors={['#3e3e3e', '#df3428']}
+          textColors={['#ffffff']}
+          onStopSpinning={() => {
+            setMustSpin(false);
+            setPrizeText(data[prizeNumber].option)
+            setWinner(true)
+            setClickable(true)
+          }}        
+        />
+      </div>
+      
       <button className={clickable? 'rounded-2xl mx-auto  p-4 my-auto  mt-2 bg-blue-300 hover:bg-blue-400' : 'rounded-2xl mx-auto  p-4 my-auto  mt-2 bg-gray-300 text-gray-500'} onClick={handleSpinClick} disabled={!clickable}>GIRAR</button>
     </div>
   )
