@@ -8,6 +8,7 @@ const Wheel = dynamic(() => import('react-custom-roulette').then(mod => mod.Whee
 
 type Props = {
   setPrizeText: (arg0:string)=>void
+  setWinner: (arg0:boolean)=>void
 }
 
 const data = [
@@ -31,12 +32,17 @@ const data = [
   { option: 'Gorra Negra', style: { backgroundColor: '#2dc9d1', textColor: 'black' } },
 ]
 
-export default function WheelComponent({setPrizeText}: Props) {
+export default function WheelComponent({setPrizeText, setWinner}: Props) {
   const [mustSpin, setMustSpin] = useState(false);
-  const [prizeNumber, setPrizeNumber] = useState(0)
+  const [prizeNumber, setPrizeNumber] = useState(0);
+  const [clickable, setClickable] = useState(true);
+
 
   const handleSpinClick = () => {
     if (!mustSpin) {
+      setClickable(false);
+      setWinner(false);
+      setPrizeNumber(0);
       const newPrizeNumber = Math.floor(Math.random() * data.length);
       setPrizeNumber(newPrizeNumber);
       setMustSpin(true);
@@ -45,7 +51,7 @@ export default function WheelComponent({setPrizeText}: Props) {
   }
 
   return (
-    <div className='md:flex grid grid-cols-1 justify-items-center mx-auto space-x-10'>
+    <div className='grid grid-cols-1 justify-items-center mx-auto space-x-10'>
       <Wheel
         mustStartSpinning={mustSpin}
         prizeNumber={prizeNumber}
@@ -55,9 +61,11 @@ export default function WheelComponent({setPrizeText}: Props) {
         onStopSpinning={() => {
           setMustSpin(false);
           setPrizeText(data[prizeNumber].option)
+          setWinner(true)
+          setClickable(true)
         }}        
       />
-      <button className='rounded-2xl mx-auto bg-blue-200 p-4 my-auto hover:bg-blue-300' onClick={handleSpinClick}>GIRAR</button>
+      <button className={clickable? 'rounded-2xl mx-auto  p-4 my-auto  mt-2 bg-blue-300 hover:bg-blue-400' : 'rounded-2xl mx-auto  p-4 my-auto  mt-2 bg-gray-300 text-gray-500'} onClick={handleSpinClick} disabled={!clickable}>GIRAR</button>
     </div>
   )
 }
