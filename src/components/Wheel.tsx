@@ -48,6 +48,7 @@ export default function WheelComponent({setPrizeText, setWinner}: Props) {
       const newPrizeNumber = Math.floor(Math.random() * data.length);
       setPrizeNumber(newPrizeNumber);
       setMustSpin(true);
+      console.log(prizeNumber)
     }
 
   }
@@ -67,7 +68,6 @@ export default function WheelComponent({setPrizeText, setWinner}: Props) {
             setWinner(true)
             setClickable(true)
           }} 
-          
           innerBorderWidth={0}      
           innerRadius={10} 
           outerBorderWidth={0}
@@ -76,7 +76,7 @@ export default function WheelComponent({setPrizeText, setWinner}: Props) {
         />
       </div>
       
-      <button className={clickable? 'rounded-2xl mx-auto  p-4 my-auto  mt-2 bg-[#2dc9d1] hover:bg-[#21949a]' : 'rounded-2xl mx-auto  p-4 my-auto  mt-2 bg-gray-300 text-gray-500'} onClick={handleSpinClick} disabled={!clickable}>GIRAR</button>
+      <button className={clickable? 'w-2xl rounded-2xl mx-auto  p-4 my-auto  mt-2 bg-[#2dc9d1] hover:bg-[#21949a]' : 'w-2xl rounded-2xl mx-auto  p-4 my-auto  mt-2 bg-gray-300 text-gray-500'} onClick={handleSpinClick} disabled={!clickable}>GIRAR</button>
     </div>
   )
 }
