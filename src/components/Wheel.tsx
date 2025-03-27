@@ -2,6 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import { useState } from 'react'
+import Image from 'next/image';
 
 // Dynamically import react-custom-roulette with SSR disabled
 const Wheel = dynamic(() => import('react-custom-roulette').then(mod => mod.Wheel), { ssr: false });
@@ -60,7 +61,7 @@ export default function WheelComponent({setPrizeText, setWinner}: Props) {
           mustStartSpinning={mustSpin}
           prizeNumber={prizeNumber}
           data={data}
-          backgroundColors={['#3e3e3e', '#df3428']}
+          backgroundColors={['#ff5860', '#2dc9d1']}
           textColors={['#ffffff']}
           onStopSpinning={() => {
             setMustSpin(false);
@@ -73,9 +74,16 @@ export default function WheelComponent({setPrizeText, setWinner}: Props) {
           outerBorderWidth={0}
           radiusLineWidth={0}
           fontSize={15}
+          /* pointerProps={
+            {src: "/images/logo-movilnet.jpeg"}
+          } */
+         
         />
       </div>
-      <button className={clickable? 'w-full rounded-2xl mx-auto  p-4 my-auto  mt-2 bg-[#2dc9d1] hover:bg-[#21949a]' : 'w-full rounded-2xl mx-auto  p-4 my-auto  mt-2 bg-gray-300 text-gray-500'} onClick={handleSpinClick} disabled={!clickable}>GIRAR</button>
+      <button className={clickable? 'text-4xl rounded-2xl mx-auto  p-4 my-auto  mt-2 bg-[#2dc9d1] hover:bg-[#21949a]' : 'text-4xl rounded-2xl mx-auto  p-4 my-auto  mt-2 bg-gray-300 text-gray-500'} onClick={handleSpinClick} disabled={!clickable}>
+        GIRAR
+        <Image className="mx-auto rounded-lg m-2" src="/images/logo-movilnet.jpeg" alt="Logo PYME Movilnet" width={100} height={50}/> 
+        </button>
     </div>
   )
 }
