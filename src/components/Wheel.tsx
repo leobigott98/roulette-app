@@ -71,6 +71,9 @@ export default function WheelComponent({setPrizeText, setWinner}: Props) {
           }} 
           innerBorderWidth={0}      
           innerRadius={10} 
+          radiusLineColor='black'
+          innerBorderColor='black'
+          fontFamily=''
           outerBorderWidth={0}
           radiusLineWidth={0}
           fontSize={15}
