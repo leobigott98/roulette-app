@@ -57,6 +57,8 @@ export default function WheelComponent({setPrizeText, setWinner}: Props) {
   return (
     <div className='grid grid-cols-1 justify-items-center mx-auto space-x-10'>
       <div className='mx-auto'>
+        <div className="relative z-10" style={{width: '100%', height: '100%'}}>
+        <Image className="rounded-4xl absolute top-0 bottom-0 h-fit left-0 right-0 mx-auto my-auto flex z-0" src="/images/logo-movilnet.jpeg" alt="Logo PYME Movilnet" width={50} height={50}/>
         <Wheel
           mustStartSpinning={mustSpin}
           prizeNumber={prizeNumber}
@@ -77,15 +79,16 @@ export default function WheelComponent({setPrizeText, setWinner}: Props) {
           outerBorderWidth={0}
           radiusLineWidth={0}
           fontSize={15}
-          /* pointerProps={
-            {src: "/images/logo-movilnet.jpeg"}
-          } */
+          pointerProps={
+            {src: "/images/roulette-pointer.png"}
+          }
          
         />
+        </div>
       </div>
       <button className={clickable? 'text-4xl rounded-2xl mx-auto  p-4 my-auto  mt-2 bg-[#2dc9d1] hover:bg-[#21949a]' : 'text-4xl rounded-2xl mx-auto  p-4 my-auto  mt-2 bg-gray-300 text-gray-500'} onClick={handleSpinClick} disabled={!clickable}>
         GIRAR
-        <Image className="mx-auto rounded-lg m-2" src="/images/logo-movilnet.jpeg" alt="Logo PYME Movilnet" width={100} height={50}/> 
+        <Image className="mx-auto rounded-lg m-2" src="/images/logo_girar.png" alt="Logo PYME Movilnet" width={100} height={50}/> 
         </button>
     </div>
   )
