@@ -13,26 +13,26 @@ type Props = {
 }
 
 const data = [
-  { option: 'Conecta', style: { backgroundColor: '#d5d6d2', textColor: 'black', } },
-  { option: 'Descubre', style: { backgroundColor: '#ff5860', textColor: 'black' } },
-  { option: 'Comparte', style: { backgroundColor: '#2dc9d1', textColor: 'black' } },
-  { option: '5G', style: { backgroundColor: '#d5d6d2', textColor: 'black' } },
-  { option: 'Gracias por Participar', style: { backgroundColor: '#ff5860', textColor: 'black' } },
-  { option: 'Intenta 1 vez más', style: { backgroundColor: '#2dc9d1', textColor: 'black' } },
-  { option: 'Conecta', style: { backgroundColor: '#d5d6d2', textColor: 'black' }  },
-  { option: 'Descubre', style: { backgroundColor: '#ff5860', textColor: 'black' } },
-  { option: 'Comparte', style: { backgroundColor: '#2dc9d1', textColor: 'black' } },
-  { option: 'Intenta 1 vez más', style: { backgroundColor: '#d5d6d2', textColor: 'black' } },
-  { option: 'Conecta', style: { backgroundColor: '#ff5860', textColor: 'black' }  },
-  { option: 'Descubre', style: { backgroundColor: '#2dc9d1', textColor: 'black' } },
-  { option: 'Comparte', style: { backgroundColor: '#d5d6d2', textColor: 'black' } },
-  { option: 'Gracias por Participar', style: { backgroundColor: '#ff5860', textColor: 'black' } },
-  { option: 'Intenta 1 vez más', style: { backgroundColor: '#2dc9d1', textColor: 'black' } },
-  { option: 'Conecta', style: { backgroundColor: '#d5d6d2', textColor: 'black' }  },
-  { option: 'Descubre', style: { backgroundColor: '#ff5860', textColor: 'black' } },
-  { option: 'Comparte', style: { backgroundColor: '#2dc9d1', textColor: 'black' } },
-  { option: '5G', style: { backgroundColor: '#d5d6d2', textColor: 'black' } },
-  { option: 'Gracias por Participar', style: { backgroundColor: '#ff5860', textColor: 'black' } },
+  { option: 'Conecta', style: { backgroundColor: 'rgb(255,130,0)', textColor: 'black', } },
+  { option: 'Descubre', style: { backgroundColor: 'rgb(165,0,80)', textColor: 'black' } },
+  { option: 'Comparte', style: { backgroundColor: 'rgb(0,152,117)', textColor: 'black' } },
+  { option: '5G', style: { backgroundColor: 'rgb(152,30,151)', textColor: 'black' } },
+  { option: 'Gracias por Participar', style: { backgroundColor: 'rgb(0,169,206)', textColor: 'black' } },
+  { option: 'Intenta 1 vez más', style: { backgroundColor: 'rgb(80,8,120)', textColor: 'black' } },
+  { option: 'Conecta', style: { backgroundColor: 'rgb(250,70,22)', textColor: 'black' }  },
+  { option: 'Descubre', style: { backgroundColor: 'rgb(0,87,183)', textColor: 'black' } },
+  { option: 'Comparte', style: { backgroundColor: 'rgb(210,39,48)', textColor: 'black' } },
+  { option: 'Intenta 1 vez más', style: { backgroundColor: 'rgb(0,183,79)', textColor: 'black' } },
+  { option: 'Conecta', style: { backgroundColor: 'rgb(250,70,22)', textColor: 'black' }  },
+  { option: 'Descubre', style: { backgroundColor: 'rgb(33,87,50)', textColor: 'black' } },
+  { option: 'Comparte', style: { backgroundColor: 'rgb(152,30,151)', textColor: 'black' } },
+  { option: 'Gracias por Participar', style: { backgroundColor: 'rgb(0,169,206)', textColor: 'black' } },
+  { option: 'Intenta 1 vez más', style: { backgroundColor: 'rgb(165,0,80)', textColor: 'black' } },
+  { option: 'Conecta', style: { backgroundColor: 'rgb(255,130,0)', textColor: 'black' }  },
+  { option: 'Descubre', style: { backgroundColor: 'rgb(80,8,120)', textColor: 'black' } },
+  { option: 'Comparte', style: { backgroundColor: 'rgb(210,39,48)', textColor: 'black' } },
+  { option: '5G', style: { backgroundColor: 'rgb(0,87,183)', textColor: 'black' } },
+  { option: 'Gracias por Participar', style: { backgroundColor: 'rgb(0,152,117)', textColor: 'black' } },
 ]
 
 export default function WheelComponent({setPrizeText, setWinner}: Props) {
@@ -58,7 +58,7 @@ export default function WheelComponent({setPrizeText, setWinner}: Props) {
     <div className='grid grid-cols-1 justify-items-center mx-auto space-x-10'>
       <div className='mx-auto'>
         <div className="relative z-10" style={{width: '100%', height: '100%'}}>
-        <Image className="rounded-4xl absolute top-0 bottom-0 h-fit left-0 right-0 mx-auto my-auto flex z-0" src="/images/logo-movilnet.jpeg" alt="Logo PYME Movilnet" width={50} height={50}/>
+        <Image className="absolute top-0 bottom-0 h-fit left-0 right-0 mx-auto my-auto flex z-0" src="/images/logo_credicard_vertical.png" alt="Logo PYME Movilnet" width={50} height={50}/>
         <Wheel
           mustStartSpinning={mustSpin}
           prizeNumber={prizeNumber}
@@ -87,7 +87,7 @@ export default function WheelComponent({setPrizeText, setWinner}: Props) {
         </div>
       </div>
       <button className={clickable? 'text-4xl rounded-2xl mx-auto  p-4 my-auto  mt-2 bg-[#2dc9d1] hover:bg-[#21949a]' : 'text-4xl rounded-2xl mx-auto  p-4 my-auto  mt-2 bg-gray-300 text-gray-500'} onClick={handleSpinClick} disabled={!clickable}>
-        <Image className="mx-auto rounded-lg m-2" src="/images/logo_girar.png" alt="Logo PYME Movilnet" width={100} height={50}/> 
+        <Image className="mx-auto rounded-lg m-2" src="/images/logo_credicard_vertical.png" alt="Logo Credicard" width={100} height={50}/> 
         </button>
     </div>
   )

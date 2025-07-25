@@ -27,8 +27,8 @@ export default function Home() {
           prize={prize}
         />
         <div className="grid grid-cols-1 justify-items-center ">
-          <h1 className='text-7xl my-1 mb-2 text-center'>Ruleta 4G Max</h1>
-          <Image className="rounded-2xl object-contain" src="/images/Movilnet-logo_0.png" alt="Logo PYME Movilnet" width={600} height={200}/>
+          {/* <h1 className='text-7xl my-1 mb-2 text-center'>Ruleta 4G Max</h1> */}
+          <Image className="rounded-2xl object-contain" src="/images/logo_credicard_horizontal.png" alt="Logo Credicard" width={600} height={200}/>
            
         </div>
           <WheelComponent 

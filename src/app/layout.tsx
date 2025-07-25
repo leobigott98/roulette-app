@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ruleta Movilnet",
-  description: "Ruleta de la Suerte Movilnet",
+  title: "Ruleta Credicard",
+  description: "Ruleta de la Suerte Credicard",
 };
 
 export default function RootLayout({
